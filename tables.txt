@@ -1,0 +1,223 @@
+Employee -> Employee_id (PK)
+            first_name
+            last_name
+            gender
+            phone_no
+            DOB
+            department
+
+Salary ->   id (PK)
+            Employee_id (FK)
+            Gross_salary
+            Tax_Amount
+            Deductions
+            net_salary
+
+Address ->  id (PK)
+            Employee_id (FK)
+            street
+            Zipcode
+            country
+            city
+
+Attendance ->   id (PK)
+                Employee_id (FK)
+                date
+                leave_type
+
+Performance ->  id (PK)
+                Employee_id (FK)
+                date
+                test_type
+                test_max_score
+                test_secured_score
+
+Job History ->  id (PK)
+                Employee_id (FK)
+                job_title
+                start_date
+                end_date
+                job_description
+
+Disciplinary Action ->  id (PK)
+                        Employee_id (FK)
+                        action_date
+                        action_type
+                        action_description
+
+
+
+this is my table Admin_login and here are its columns
+admin_id
+admin_username
+admin_password
+
+provide me a php script that checks wether the username and password from $_post matches any of the available admin_username and admin_password.if so, it should set a session variable 'admin_id' with the corresponding admin_id value. 
+
+
+given is a form with single text field and four buttons, make those 4 buttons as individual submit buttons and each of them must redirect to different php pages.
+<form>
+  <div class="input-wrapper">
+    <input type="text" placeholder="Enter employee id">
+  </div>
+  <div class="background">
+    <div class="button-container">
+      <a href="#" class="button blue-button">
+        <div class="button-content">
+          View Employee
+        </div>
+      </a>
+      <a href="#" class="button red-button">
+        <div class="button-content">
+          Add a Employee
+        </div>
+      </a>
+      <a href="#" class="button green-button">
+        <div class="button-content">
+          Update Employee Data
+        </div>
+      </a>
+      <a href="#" class="button yellow-button">
+        <div class="button-content">
+          Remove employee
+        </div>
+      </a>
+    </div>
+  </div>
+  </form>
+
+
+provide a php script for this form that inserts the data in database
+this is the database schema
+Employee -> Employee_id (PK)
+            first_name
+            last_name
+            gender
+            DOB
+            department
+
+Salary ->   id (PK)
+            Employee_id (FK)
+            Gross_salary
+            Tax_Amount
+            Deductions
+            net_salary
+
+Address ->  id (PK)
+            Employee_id (FK)
+            street
+            Zipcode
+            country
+            city
+
+Attendance ->   id (PK)
+                Employee_id (FK)
+                date
+                leave_type
+
+Performance ->  id (PK)
+                Employee_id (FK)
+                date
+                test_type
+                test_max_score
+                test_secured_score
+
+Job History ->  id (PK)
+                Employee_id (FK)
+                job_title
+                start_date
+                end_date
+                job_description
+
+Disciplinary Action ->  id (PK)
+                        Employee_id (FK)
+                        action_date
+                        action_type
+                        action_description
+
+and this is the form <form method="POST" action="insert_employee.php">
+		<h2>Employee Details</h2>
+		<label for="first_name">First Name:</label>
+		<input type="text" name="first_name" required><br>
+
+		<label for="last_name">Last Name:</label>
+		<input type="text" name="last_name" required><br>
+
+		<label for="gender">Gender:</label>
+		<input type="radio" name="gender" value="Male" required>Male
+		<input type="radio" name="gender" value="Female" required>Female
+		<input type="radio" name="gender" value="Other" required>Other<br>
+
+		<label for="dob">Date of Birth:</label>
+		<input type="date" name="dob" required><br>
+
+		<label for="department">Department:</label>
+		<input type="text" name="department" required><br>
+
+		<h2>Salary</h2>
+		<label for="gross_salary">Gross Salary:</label>
+		<input type="number" name="gross_salary" required><br>
+
+		<label for="tax_amount">Tax Amount:</label>
+		<input type="number" name="tax_amount" required><br>
+
+		<label for="deductions">Deductions:</label>
+		<input type="number" name="deductions" required><br>
+
+		<label for="net_salary">Net Salary:</label>
+		<input type="number" name="net_salary" required><br>
+
+		<h2>Address</h2>
+		<label for="street">Street:</label>
+		<input type="text" name="street" required><br>
+
+		<label for="zipcode">Zipcode:</label>
+		<input type="text" name="zipcode" required><br>
+
+		<label for="country">Country:</label>
+		<input type="text" name="country" required><br>
+
+		<label for="city">City:</label>
+		<input type="text" name="city" required><br>
+
+		<h2>Attendance</h2>
+		<label for="date">Date:</label>
+		<input type="date" name="date" required><br>
+
+		<label for="leave_type">Leave Type:</label>
+		<input type="text" name="leave_type" required><br>
+
+		<h2>Performance</h2>
+		<label for="test_type">Test Type:</label>
+		<input type="text" name="test_type" required><br>
+
+		<label for="test_max_score">Test Maximum Score:</label>
+		<input type="number" name="test_max_score" required><br>
+
+		<label for="test_secured_score">Test Secured Score:</label>
+		<input type="number" name="test_secured_score" required><br>
+
+		<h2>Job History</h2>
+		<label for="job_title">Job Title:</label>
+		<input type="text" name="job_title" required><br>
+
+		<label for="start_date">Start Date:</label>
+		<input type="date" name="start_date" required><br>
+
+		<label for="end_date">End Date:</label>
+		<input type="date" name="end_date" required><br>
+        <label for="job_description">Job Description
+	<textarea name="job_description"></textarea><br>
+
+	<h2>Disciplinary Action</h2>
+	<label for="action_date">Action Date:</label>
+	<input type="date" name="action_date"><br>
+
+	<label for="action_type">Action Type:</label>
+	<input type="text" name="action_type"><br>
+
+	<label for="action_description">Action Description:</label>
+	<textarea name="action_description"></textarea><br>
+
+	<input type="submit" value="Submit">
+</form>
